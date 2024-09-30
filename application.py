@@ -18,6 +18,7 @@ def predict_datapoint():
     if request.method == "GET":
         return render_template("home.html")
     else:
+        print("Inside post request of predictdata")
         data = CustomData(
             gender = request.form.get("gender"),
             race_ethnicity = request.form.get("ethnicity"),
@@ -27,7 +28,7 @@ def predict_datapoint():
             writing_score = float(request.form.get("writing_score")),
             reading_score = float(request.form.get("reading_score"))            
         )
-        
+        print(data)
         pred_df = data.get_data_as_dataframe()
         print("Form input data:\n",pred_df)
         predict_pipeline = Predict_Pipeline()
