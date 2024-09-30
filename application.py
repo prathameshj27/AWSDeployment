@@ -10,6 +10,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def index():
+    print("Index Page")
     return render_template("index.html")
 
 @application.route("/predictdata", methods=["GET","POST"])
