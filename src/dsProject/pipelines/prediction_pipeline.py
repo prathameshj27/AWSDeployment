@@ -6,14 +6,20 @@ from src.dsProject.utils import load_object
 
 class Predict_Pipeline:
     def __init__(self):
+        print("Predict_Pipeline class initialized")
         pass
 
     def predict(self,features):
         try:
+            print("Inside predict function")
             model_path = os.path.join("Artifacts","Model_tainer.pkl")
+            print("Fetched model path for prediction")
             preprocessor_path = os.path.join("Artifacts","preprocessor.pkl")
+            print("preprocessing file path fetched")
             model = load_object(file_path = model_path)
+            print("model fetched from artifacts")
             preprocessor = load_object(file_path = preprocessor_path)
+            print("preprocessor object fetched")
             scaled_data = preprocessor.transform(features)
             prediction = model.predict(scaled_data)
             return prediction
@@ -41,8 +47,11 @@ class CustomData:
 
         self.reading_score=reading_score
 
+        print("CustomData initialized")
+
     def get_data_as_dataframe(self):
         try:
+            print("Inside get_data_as_dataframe function")
             custom_data_input_dict={
                 "gender" : [self.gender],
                 "race_ethnicity" : [self.race_ethnicity],
