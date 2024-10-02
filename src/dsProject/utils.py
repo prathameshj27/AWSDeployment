@@ -75,6 +75,7 @@ def load_object(file_path):
     try:
         print("inside load_object function of utils and file path is ", file_path)
         with open(file_path, "rb") as file_obj:
+            print("Inside open file path")
             return pickle.load(file_obj)
             
     except Exception as e:
