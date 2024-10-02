@@ -78,4 +78,5 @@ def load_object(file_path):
             return pickle.load(file_obj)
             
     except Exception as e:
+        print("error inside load object",e)
         raise CustomException(e,sys)

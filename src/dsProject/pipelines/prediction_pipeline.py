@@ -25,6 +25,7 @@ class Predict_Pipeline:
             return prediction
 
         except Exception as e:
+            print("error inside predict function", e)
             raise CustomException(e,sys)
         
 class CustomData:
